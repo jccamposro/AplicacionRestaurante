@@ -16,17 +16,65 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contenedorPanel = new javax.swing.JPanel();
+        tituloPanel = new javax.swing.JPanel();
+        asginacionBoton = new javax.swing.JButton();
+        restaurantesBoton = new javax.swing.JButton();
+        principalPanel = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        contenedorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        asginacionBoton.setText("Asignación");
+
+        restaurantesBoton.setText("Restaurantes");
+
+        javax.swing.GroupLayout tituloPanelLayout = new javax.swing.GroupLayout(tituloPanel);
+        tituloPanel.setLayout(tituloPanelLayout);
+        tituloPanelLayout.setHorizontalGroup(
+            tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(asginacionBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(restaurantesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(960, Short.MAX_VALUE))
+        );
+        tituloPanelLayout.setVerticalGroup(
+            tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tituloPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(asginacionBoton)
+                    .addComponent(restaurantesBoton))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        contenedorPanel.add(tituloPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 70));
+
+        javax.swing.GroupLayout principalPanelLayout = new javax.swing.GroupLayout(principalPanel);
+        principalPanel.setLayout(principalPanelLayout);
+        principalPanelLayout.setHorizontalGroup(
+            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
+        principalPanelLayout.setVerticalGroup(
+            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        contenedorPanel.add(principalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1280, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addComponent(contenedorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(contenedorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -43,7 +91,7 @@ public class FramePrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -68,5 +116,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton asginacionBoton;
+    private javax.swing.JPanel contenedorPanel;
+    private javax.swing.JPanel principalPanel;
+    private javax.swing.JButton restaurantesBoton;
+    private javax.swing.JPanel tituloPanel;
     // End of variables declaration//GEN-END:variables
 }
