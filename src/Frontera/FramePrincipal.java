@@ -1,6 +1,9 @@
 package Frontera;
 
 public class FramePrincipal extends javax.swing.JFrame {
+    
+    private Restaurante restaurante = new Restaurante();
+    private Asignacion asignacion = new Asignacion();
 
     public FramePrincipal() {
         initComponents();
@@ -23,12 +26,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         principalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         contenedorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         asginacionBoton.setText("Asignación");
+        asginacionBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                asginacionBotonActionPerformed(evt);
+            }
+        });
 
         restaurantesBoton.setText("Restaurantes");
+        restaurantesBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restaurantesBotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tituloPanelLayout = new javax.swing.GroupLayout(tituloPanel);
         tituloPanel.setLayout(tituloPanelLayout);
@@ -53,17 +67,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         contenedorPanel.add(tituloPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 70));
 
-        javax.swing.GroupLayout principalPanelLayout = new javax.swing.GroupLayout(principalPanel);
-        principalPanel.setLayout(principalPanelLayout);
-        principalPanelLayout.setHorizontalGroup(
-            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-        );
-        principalPanelLayout.setVerticalGroup(
-            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-        );
-
+        principalPanel.setLayout(new java.awt.BorderLayout());
         contenedorPanel.add(principalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1280, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,6 +83,20 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void restaurantesBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurantesBotonActionPerformed
+        principalPanel.setVisible(false);
+        principalPanel.removeAll();
+        principalPanel.add(restaurante);
+        principalPanel.setVisible(true);
+    }//GEN-LAST:event_restaurantesBotonActionPerformed
+
+    private void asginacionBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asginacionBotonActionPerformed
+        principalPanel.setVisible(false);
+        principalPanel.removeAll();
+        principalPanel.add(asignacion);
+        principalPanel.setVisible(true);
+    }//GEN-LAST:event_asginacionBotonActionPerformed
 
     /**
      * @param args the command line arguments
