@@ -6,6 +6,16 @@ public class NuevaAsignacion extends javax.swing.JPanel {
         initComponents();
     }
 
+    public boolean validarCampos() {
+        return (restauranteTF1.getText().isEmpty() && restauranteTF4.getText().isEmpty() && restauranteTF5.getText().isEmpty() && restauranteTF6.getText().isEmpty());
+    }
+    
+    public void vaciarCampos(){
+        restauranteTF1.setText("");
+        restauranteTF4.setText("");
+        restauranteTF5.setText("");
+        restauranteTF6.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -15,21 +25,100 @@ public class NuevaAsignacion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(19, 38, 35));
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        restauranteTF1 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        restauranteTF4 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        restauranteTF5 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        restauranteTF6 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
-        );
+        setBackground(new java.awt.Color(19, 38, 35));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Persona");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 30));
+
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Restaurante");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 200, 30));
+
+        jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Mesa");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 200, 30));
+
+        jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Turno");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 200, 30));
+
+        restauranteTF1.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        restauranteTF1.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        restauranteTF1.setBorder(null);
+        add(restauranteTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 240, 30));
+
+        jSeparator1.setBackground(new java.awt.Color(113, 166, 111));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 240, 10));
+
+        restauranteTF4.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        restauranteTF4.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        restauranteTF4.setBorder(null);
+        add(restauranteTF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 240, 30));
+
+        jSeparator2.setBackground(new java.awt.Color(113, 166, 111));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 240, 10));
+
+        restauranteTF5.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        restauranteTF5.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        restauranteTF5.setBorder(null);
+        add(restauranteTF5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 240, 30));
+
+        jSeparator3.setBackground(new java.awt.Color(113, 166, 111));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 240, 10));
+
+        restauranteTF6.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        restauranteTF6.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        restauranteTF6.setBorder(null);
+        add(restauranteTF6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 240, 30));
+
+        jSeparator4.setBackground(new java.awt.Color(113, 166, 111));
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 240, 10));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField restauranteTF1;
+    private javax.swing.JTextField restauranteTF4;
+    private javax.swing.JTextField restauranteTF5;
+    private javax.swing.JTextField restauranteTF6;
     // End of variables declaration//GEN-END:variables
 }

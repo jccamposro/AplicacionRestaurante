@@ -1,5 +1,7 @@
 package Frontera;
 
+import javax.swing.JOptionPane;
+
 public class FramePrincipal extends javax.swing.JFrame {
 
     private Restaurante restaurante = new Restaurante();
@@ -24,7 +26,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         tituloPanel = new javax.swing.JPanel();
         close = new javax.swing.JLabel();
         inicio = new javax.swing.JLabel();
-        emptySpaceOne = new javax.swing.JLabel();
+        servicioDeRestaurante = new javax.swing.JLabel();
         principalPanel = new javax.swing.JPanel();
         inicioPrincipal = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -46,7 +48,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         contenedorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tituloPanel.setBackground(new java.awt.Color(38, 115, 49));
+        tituloPanel.setBackground(new java.awt.Color(140, 19, 29));
         tituloPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,13 +71,13 @@ public class FramePrincipal extends javax.swing.JFrame {
                 inicioMouseClicked(evt);
             }
         });
-        tituloPanel.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 70, 70));
+        tituloPanel.add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 21, 70, 50));
 
-        emptySpaceOne.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        emptySpaceOne.setForeground(new java.awt.Color(19, 38, 35));
-        emptySpaceOne.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        emptySpaceOne.setText("SERVICIO DE RESTAURANTE");
-        tituloPanel.add(emptySpaceOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 11, 1100, 70));
+        servicioDeRestaurante.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
+        servicioDeRestaurante.setForeground(new java.awt.Color(19, 38, 35));
+        servicioDeRestaurante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        servicioDeRestaurante.setText("SERVICIO DE RESTAURANTE");
+        tituloPanel.add(servicioDeRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 11, 1100, 70));
 
         contenedorPanel.add(tituloPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 90));
 
@@ -114,7 +116,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         inicioPrincipal.add(restauranteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, 150, 30));
 
         asignacionLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        asignacionLabel.setForeground(new java.awt.Color(255, 255, 255));
+        asignacionLabel.setForeground(new java.awt.Color(113, 166, 111));
         asignacionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacionLabel.setText("ASIGNACIÓN");
         asignacionLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,7 +128,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         inicioPrincipal.add(asignacionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 150, 30));
 
         restauranteLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        restauranteLabel1.setForeground(new java.awt.Color(113, 166, 111));
         restauranteLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         restauranteLabel1.setText("RESTAURANTE");
         restauranteLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -184,7 +186,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_closeMouseClicked
 
     private void inicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicioMouseClicked
-        inicioGUI();
+        validarInicioGUI();
     }//GEN-LAST:event_inicioMouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -260,6 +262,19 @@ public class FramePrincipal extends javax.swing.JFrame {
         principalPanel.add(inicioPrincipal);
         principalPanel.setVisible(true);
         inicio.setVisible(false);
+        asignacion.inicioAsignacion();
+    }
+
+    public void validarInicioGUI() {
+        int selCon = JOptionPane.showConfirmDialog(null, "¿Desea volver al inicio?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
+        if (selCon == 0) {
+            principalPanel.setVisible(false);
+            principalPanel.removeAll();
+            principalPanel.add(inicioPrincipal);
+            principalPanel.setVisible(true);
+            inicio.setVisible(false);
+            asignacion.inicioAsignacion();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -267,7 +282,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel asignacionLabel1;
     private javax.swing.JLabel close;
     private javax.swing.JPanel contenedorPanel;
-    private javax.swing.JLabel emptySpaceOne;
     private javax.swing.JLabel inicio;
     private javax.swing.JPanel inicioPrincipal;
     private javax.swing.JLabel jLabel10;
@@ -281,6 +295,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel restauranteLabel1;
     private javax.swing.JLabel restauranteLabel2;
     private javax.swing.JLabel restauranteLabel3;
+    private javax.swing.JLabel servicioDeRestaurante;
     private javax.swing.JPanel tituloPanel;
     // End of variables declaration//GEN-END:variables
 }

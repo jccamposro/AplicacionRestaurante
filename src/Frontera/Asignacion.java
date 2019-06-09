@@ -1,9 +1,46 @@
 package Frontera;
 
+import javax.swing.JOptionPane;
+
 public class Asignacion extends javax.swing.JPanel {
+
+    private NuevaAsignacion nueva = new NuevaAsignacion();
 
     public Asignacion() {
         initComponents();
+        inicioAsignacion();
+    }
+
+    public void inicioAsignacion() {
+        principalAsignacion.setVisible(false);
+        principalAsignacion.removeAll();
+        principalAsignacion.add(inicioAsignacion);
+        principalAsignacion.setVisible(true);
+        back.setVisible(false);
+    }
+
+    public void validarInicioAsignacion() {
+        if (nueva.validarCampos()) {
+            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea volver al inicio?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
+            if (selCon == 0) {
+                principalAsignacion.setVisible(false);
+                principalAsignacion.removeAll();
+                principalAsignacion.add(inicioAsignacion);
+                principalAsignacion.setVisible(true);
+                back.setVisible(false);
+            }
+        } else {
+            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
+            if (selCon == 0) {
+                System.out.println("Datos guardados");
+                principalAsignacion.setVisible(false);
+                principalAsignacion.removeAll();
+                principalAsignacion.add(inicioAsignacion);
+                principalAsignacion.setVisible(true);
+                back.setVisible(false);
+                nueva.vaciarCampos();
+            }
+        }
     }
 
     /**
@@ -17,118 +54,121 @@ public class Asignacion extends javax.swing.JPanel {
 
         tituloAsignacion = new javax.swing.JPanel();
         asignacion = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         principalAsignacion = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        inicioAsignacion = new javax.swing.JPanel();
+        asignacionNuevaIcon = new javax.swing.JLabel();
+        asignacionNuevaLabel = new javax.swing.JLabel();
+        asignacionVerIcon = new javax.swing.JLabel();
+        asignacionVerLabel = new javax.swing.JLabel();
+        asignacionEditarIcon = new javax.swing.JLabel();
+        asignacionEditarLabel = new javax.swing.JLabel();
 
         tituloAsignacion.setBackground(new java.awt.Color(113, 166, 111));
+        tituloAsignacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         asignacion.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         asignacion.setForeground(new java.awt.Color(19, 38, 35));
         asignacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacion.setText("ASIGNACIÓN");
+        tituloAsignacion.add(asignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, -1, 1120, 80));
 
-        javax.swing.GroupLayout tituloAsignacionLayout = new javax.swing.GroupLayout(tituloAsignacion);
-        tituloAsignacion.setLayout(tituloAsignacionLayout);
-        tituloAsignacionLayout.setHorizontalGroup(
-            tituloAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloAsignacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(asignacion, javax.swing.GroupLayout.DEFAULT_SIZE, 1260, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tituloAsignacionLayout.setVerticalGroup(
-            tituloAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloAsignacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(asignacion, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/arrow.png"))); // NOI18N
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        tituloAsignacion.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
 
         principalAsignacion.setBackground(new java.awt.Color(19, 38, 35));
+        principalAsignacion.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(113, 166, 111));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Restaurante:");
+        inicioAsignacion.setBackground(new java.awt.Color(19, 38, 35));
 
-        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(113, 166, 111));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Persona:");
+        asignacionNuevaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/noteB.png"))); // NOI18N
+        asignacionNuevaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        asignacionNuevaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                asignacionNuevaIconMouseClicked(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(113, 166, 111));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Turno:");
+        asignacionNuevaLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        asignacionNuevaLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionNuevaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionNuevaLabel.setText("CREAR");
+        asignacionNuevaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(113, 166, 111));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Mesa:");
+        asignacionVerIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionVerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dataB.png"))); // NOI18N
+        asignacionVerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setBorder(null);
+        asignacionVerLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        asignacionVerLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionVerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionVerLabel.setText("VER");
+        asignacionVerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        asignacionEditarIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionEditarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pencilB.png"))); // NOI18N
 
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        asignacionEditarLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        asignacionEditarLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionEditarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionEditarLabel.setText("EDITAR");
 
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout principalAsignacionLayout = new javax.swing.GroupLayout(principalAsignacion);
-        principalAsignacion.setLayout(principalAsignacionLayout);
-        principalAsignacionLayout.setHorizontalGroup(
-            principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(principalAsignacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                .addContainerGap(760, Short.MAX_VALUE))
+        javax.swing.GroupLayout inicioAsignacionLayout = new javax.swing.GroupLayout(inicioAsignacion);
+        inicioAsignacion.setLayout(inicioAsignacionLayout);
+        inicioAsignacionLayout.setHorizontalGroup(
+            inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1281, Short.MAX_VALUE)
+            .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                            .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(170, 170, 170)
+                            .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(160, 160, 160)
+                            .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                            .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(170, 170, 170)
+                            .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(160, 160, 160)
+                            .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        principalAsignacionLayout.setVerticalGroup(
-            principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(principalAsignacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addGap(11, 11, 11)
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(principalAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
-                .addContainerGap(376, Short.MAX_VALUE))
+        inicioAsignacionLayout.setVerticalGroup(
+            inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 551, Short.MAX_VALUE)
+            .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        principalAsignacion.add(inicioAsignacion, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tituloAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(principalAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(principalAsignacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tituloAsignacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,17 +179,29 @@ public class Asignacion extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void asignacionNuevaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionNuevaIconMouseClicked
+        principalAsignacion.setVisible(false);
+        principalAsignacion.removeAll();
+        principalAsignacion.add(nueva);
+        principalAsignacion.setVisible(true);
+        back.setVisible(true);
+    }//GEN-LAST:event_asignacionNuevaIconMouseClicked
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        validarInicioAsignacion();
+    }//GEN-LAST:event_backMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel asignacion;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel asignacionEditarIcon;
+    private javax.swing.JLabel asignacionEditarLabel;
+    private javax.swing.JLabel asignacionNuevaIcon;
+    private javax.swing.JLabel asignacionNuevaLabel;
+    private javax.swing.JLabel asignacionVerIcon;
+    private javax.swing.JLabel asignacionVerLabel;
+    private javax.swing.JLabel back;
+    private javax.swing.JPanel inicioAsignacion;
     private javax.swing.JPanel principalAsignacion;
     private javax.swing.JPanel tituloAsignacion;
     // End of variables declaration//GEN-END:variables
