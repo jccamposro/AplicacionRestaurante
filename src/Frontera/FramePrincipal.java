@@ -1,7 +1,7 @@
 package Frontera;
 
 public class FramePrincipal extends javax.swing.JFrame {
-    
+
     private Restaurante restaurante = new Restaurante();
     private Asignacion asignacion = new Asignacion();
 
@@ -21,54 +21,90 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         contenedorPanel = new javax.swing.JPanel();
         tituloPanel = new javax.swing.JPanel();
-        asginacionBoton = new javax.swing.JButton();
-        restaurantesBoton = new javax.swing.JButton();
+        asignacionBoton = new javax.swing.JLabel();
+        close = new javax.swing.JLabel();
+        restauranteBoton = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        emptySpaceOne = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         principalPanel = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Restaurante");
+        setUndecorated(true);
         setResizable(false);
 
         contenedorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        asginacionBoton.setText("Asignación");
-        asginacionBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                asginacionBotonActionPerformed(evt);
+        tituloPanel.setBackground(new java.awt.Color(38, 115, 49));
+        tituloPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        asignacionBoton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignacionBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/card.png"))); // NOI18N
+        asignacionBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        asignacionBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                asignacionBotonMouseClicked(evt);
             }
         });
+        tituloPanel.add(asignacionBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 11, 70, 70));
 
-        restaurantesBoton.setText("Restaurantes");
-        restaurantesBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                restaurantesBotonActionPerformed(evt);
+        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancel.png"))); // NOI18N
+        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
             }
         });
+        tituloPanel.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 11, 70, 70));
 
-        javax.swing.GroupLayout tituloPanelLayout = new javax.swing.GroupLayout(tituloPanel);
-        tituloPanel.setLayout(tituloPanelLayout);
-        tituloPanelLayout.setHorizontalGroup(
-            tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(asginacionBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(restaurantesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(960, Short.MAX_VALUE))
-        );
-        tituloPanelLayout.setVerticalGroup(
-            tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tituloPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(tituloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(asginacionBoton)
-                    .addComponent(restaurantesBoton))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        restauranteBoton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        restauranteBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/restaurant1.png"))); // NOI18N
+        restauranteBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        restauranteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                restauranteBotonMouseClicked(evt);
+            }
+        });
+        tituloPanel.add(restauranteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 70, 70));
 
-        contenedorPanel.add(tituloPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 70));
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(19, 38, 35));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("INICIO");
+        tituloPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 70, 70));
+        tituloPanel.add(emptySpaceOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 11, 30, 70));
 
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 22)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(19, 38, 35));
+        jLabel2.setText("ASIGNACIÓN");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        tituloPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 130, 70));
+        tituloPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 11, 30, 70));
+
+        jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 22)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(19, 38, 35));
+        jLabel4.setText("RESTAURANTE");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        tituloPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 130, 70));
+
+        contenedorPanel.add(tituloPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 90));
+
+        principalPanel.setBackground(new java.awt.Color(113, 166, 111));
         principalPanel.setLayout(new java.awt.BorderLayout());
-        contenedorPanel.add(principalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1280, 650));
+        contenedorPanel.add(principalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1280, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,19 +120,37 @@ public class FramePrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void restaurantesBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurantesBotonActionPerformed
-        principalPanel.setVisible(false);
-        principalPanel.removeAll();
-        principalPanel.add(restaurante);
-        principalPanel.setVisible(true);
-    }//GEN-LAST:event_restaurantesBotonActionPerformed
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_closeMouseClicked
 
-    private void asginacionBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asginacionBotonActionPerformed
+    private void asignacionBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionBotonMouseClicked
         principalPanel.setVisible(false);
         principalPanel.removeAll();
         principalPanel.add(asignacion);
         principalPanel.setVisible(true);
-    }//GEN-LAST:event_asginacionBotonActionPerformed
+    }//GEN-LAST:event_asignacionBotonMouseClicked
+
+    private void restauranteBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restauranteBotonMouseClicked
+        principalPanel.setVisible(false);
+        principalPanel.removeAll();
+        principalPanel.add(restaurante);
+        principalPanel.setVisible(true);
+    }//GEN-LAST:event_restauranteBotonMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        principalPanel.setVisible(false);
+        principalPanel.removeAll();
+        principalPanel.add(asignacion);
+        principalPanel.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        principalPanel.setVisible(false);
+        principalPanel.removeAll();
+        principalPanel.add(restaurante);
+        principalPanel.setVisible(true);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -134,10 +188,16 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton asginacionBoton;
+    private javax.swing.JLabel asignacionBoton;
+    private javax.swing.JLabel close;
     private javax.swing.JPanel contenedorPanel;
+    private javax.swing.JLabel emptySpaceOne;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel principalPanel;
-    private javax.swing.JButton restaurantesBoton;
+    private javax.swing.JLabel restauranteBoton;
     private javax.swing.JPanel tituloPanel;
     // End of variables declaration//GEN-END:variables
 }
