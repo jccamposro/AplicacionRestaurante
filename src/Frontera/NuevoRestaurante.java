@@ -1,8 +1,8 @@
 package Frontera;
 
-public class NuevaAsignacion extends javax.swing.JPanel {
+public class NuevoRestaurante extends javax.swing.JPanel {
 
-    public NuevaAsignacion() {
+    public NuevoRestaurante() {
         initComponents();
     }
 
@@ -45,25 +45,25 @@ public class NuevaAsignacion extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(113, 166, 111));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Persona");
+        jLabel1.setText("Ubicación");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 30));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(113, 166, 111));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Restaurante");
+        jLabel2.setText("Nombre");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(113, 166, 111));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Mesa");
+        jLabel3.setText("Horario");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(113, 166, 111));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("Turno");
+        jLabel4.setText("Tipo");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 200, 30));
 
         restauranteTF1.setBackground(new java.awt.Color(19, 38, 35));

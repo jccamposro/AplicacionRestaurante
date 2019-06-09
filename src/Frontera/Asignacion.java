@@ -43,6 +43,14 @@ public class Asignacion extends javax.swing.JPanel {
         }
     }
 
+    public void nuevaAsignacion() {
+        principalAsignacion.setVisible(false);
+        principalAsignacion.removeAll();
+        principalAsignacion.add(nueva);
+        principalAsignacion.setVisible(true);
+        back.setVisible(true);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -180,11 +188,7 @@ public class Asignacion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void asignacionNuevaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionNuevaIconMouseClicked
-        principalAsignacion.setVisible(false);
-        principalAsignacion.removeAll();
-        principalAsignacion.add(nueva);
-        principalAsignacion.setVisible(true);
-        back.setVisible(true);
+        nuevaAsignacion();
     }//GEN-LAST:event_asignacionNuevaIconMouseClicked
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
