@@ -16,7 +16,7 @@ public class Restaurante extends javax.swing.JPanel {
     private void initComponents() {
 
         tituloRestaurante = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        restaurante = new javax.swing.JLabel();
         principalRestaurante = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -29,10 +29,10 @@ public class Restaurante extends javax.swing.JPanel {
 
         tituloRestaurante.setBackground(new java.awt.Color(113, 166, 111));
 
-        jLabel5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(19, 38, 35));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("RESTAURANTE");
+        restaurante.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        restaurante.setForeground(new java.awt.Color(19, 38, 35));
+        restaurante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        restaurante.setText("RESTAURANTE");
 
         javax.swing.GroupLayout tituloRestauranteLayout = new javax.swing.GroupLayout(tituloRestaurante);
         tituloRestaurante.setLayout(tituloRestauranteLayout);
@@ -40,36 +40,36 @@ public class Restaurante extends javax.swing.JPanel {
             tituloRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tituloRestauranteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1260, Short.MAX_VALUE)
+                .addComponent(restaurante, javax.swing.GroupLayout.DEFAULT_SIZE, 1260, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tituloRestauranteLayout.setVerticalGroup(
             tituloRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tituloRestauranteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addComponent(restaurante, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         principalRestaurante.setBackground(new java.awt.Color(19, 38, 35));
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(113, 166, 111));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nombre:");
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(113, 166, 111));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ubicación:");
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(113, 166, 111));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Tipo:");
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(113, 166, 111));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Horario:");
 
@@ -144,12 +144,12 @@ public class Restaurante extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel principalRestaurante;
+    private javax.swing.JLabel restaurante;
     private javax.swing.JPanel tituloRestaurante;
     // End of variables declaration//GEN-END:variables
 }
