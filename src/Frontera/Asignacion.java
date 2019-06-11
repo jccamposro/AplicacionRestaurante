@@ -36,12 +36,7 @@ public class Asignacion extends javax.swing.JPanel {
             int selCon = dialogo.visible();
             if (selCon == 1) {
                 System.out.println("Datos guardados");
-                principalAsignacion.setVisible(false);
-                principalAsignacion.removeAll();
-                principalAsignacion.add(inicioAsignacion);
-                principalAsignacion.setVisible(true);
-                back.setVisible(false);
-                nueva.vaciarCampos();
+                
             }
             if (selCon == 0) {
                 principalAsignacion.setVisible(false);
@@ -110,7 +105,7 @@ public class Asignacion extends javax.swing.JPanel {
         principalAsignacion.setBackground(new java.awt.Color(19, 38, 35));
         principalAsignacion.setLayout(new java.awt.BorderLayout());
 
-        inicioAsignacion.setBackground(new java.awt.Color(112, 135, 140));
+        inicioAsignacion.setBackground(new java.awt.Color(164, 186, 191));
 
         asignacionNuevaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacionNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/support-ticket.png"))); // NOI18N

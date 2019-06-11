@@ -39,7 +39,7 @@ public class NuevaAsignacion extends javax.swing.JPanel {
         restauranteTF6 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(112, 135, 140));
+        setBackground(new java.awt.Color(164, 186, 191));
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(36, 56, 63));
@@ -61,7 +61,7 @@ public class NuevaAsignacion extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Turno");
 
-        restauranteTF1.setBackground(new java.awt.Color(112, 135, 140));
+        restauranteTF1.setBackground(new java.awt.Color(164, 186, 191));
         restauranteTF1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
         restauranteTF1.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -69,7 +69,7 @@ public class NuevaAsignacion extends javax.swing.JPanel {
 
         jSeparator1.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF4.setBackground(new java.awt.Color(112, 135, 140));
+        restauranteTF4.setBackground(new java.awt.Color(164, 186, 191));
         restauranteTF4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
         restauranteTF4.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -77,7 +77,7 @@ public class NuevaAsignacion extends javax.swing.JPanel {
 
         jSeparator2.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF5.setBackground(new java.awt.Color(112, 135, 140));
+        restauranteTF5.setBackground(new java.awt.Color(164, 186, 191));
         restauranteTF5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
         restauranteTF5.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -85,7 +85,7 @@ public class NuevaAsignacion extends javax.swing.JPanel {
 
         jSeparator3.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF6.setBackground(new java.awt.Color(112, 135, 140));
+        restauranteTF6.setBackground(new java.awt.Color(164, 186, 191));
         restauranteTF6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
         restauranteTF6.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF6.setHorizontalAlignment(javax.swing.JTextField.CENTER);

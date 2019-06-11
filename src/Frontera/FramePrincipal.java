@@ -70,7 +70,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         tituloPanel.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 11, 70, 70));
 
         servicioDeRestaurante.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        servicioDeRestaurante.setForeground(new java.awt.Color(112, 135, 140));
+        servicioDeRestaurante.setForeground(new java.awt.Color(192, 212, 216));
         servicioDeRestaurante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         servicioDeRestaurante.setText("SERVICIO DE RESTAURANTE");
         tituloPanel.add(servicioDeRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 11, 1100, 70));
@@ -80,7 +80,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         principalPanel.setBackground(new java.awt.Color(63, 63, 63));
         principalPanel.setLayout(new java.awt.BorderLayout());
 
-        inicioPrincipal.setBackground(new java.awt.Color(112, 135, 140));
+        inicioPrincipal.setBackground(new java.awt.Color(164, 186, 191));
         inicioPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         asignacionIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -90,16 +90,16 @@ public class Dialogo extends javax.swing.JDialog {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         dialogoPanel.setBackground(new java.awt.Color(36, 56, 63));
-        dialogoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 85, 89)));
+        dialogoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(164, 186, 191)));
         dialogoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textoLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        textoLabel.setForeground(new java.awt.Color(112, 135, 140));
+        textoLabel.setForeground(new java.awt.Color(164, 186, 191));
         textoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dialogoPanel.add(textoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 120));
 
         ok.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        ok.setForeground(new java.awt.Color(112, 135, 140));
+        ok.setForeground(new java.awt.Color(164, 186, 191));
         ok.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ok.setText("Sí");
         ok.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -111,7 +111,7 @@ public class Dialogo extends javax.swing.JDialog {
         dialogoPanel.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 40, 40));
 
         cancel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        cancel.setForeground(new java.awt.Color(112, 135, 140));
+        cancel.setForeground(new java.awt.Color(164, 186, 191));
         cancel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cancel.setText("No");
         cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
