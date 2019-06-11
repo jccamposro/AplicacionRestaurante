@@ -1,6 +1,12 @@
 package Frontera;
 
+import Conexion.Conexion;
+import java.sql.Connection;
+
 public class FramePrincipal extends javax.swing.JFrame {
+
+    Conexion con = new Conexion();
+    Connection Conectado = con.conectar("root", "17111996");
 
     public FramePrincipal() {
         initComponents();
