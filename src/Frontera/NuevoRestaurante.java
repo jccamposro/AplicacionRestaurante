@@ -39,72 +39,127 @@ public class NuevoRestaurante extends javax.swing.JPanel {
         restauranteTF6 = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
 
-        setBackground(new java.awt.Color(19, 38, 35));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(112, 135, 140));
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel1.setForeground(new java.awt.Color(36, 56, 63));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Ubicación");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 30));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel2.setForeground(new java.awt.Color(36, 56, 63));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Nombre");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel3.setForeground(new java.awt.Color(36, 56, 63));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Horario");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(113, 166, 111));
+        jLabel4.setForeground(new java.awt.Color(36, 56, 63));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Tipo");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 200, 30));
 
-        restauranteTF1.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF1.setBackground(new java.awt.Color(112, 135, 140));
         restauranteTF1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteTF1.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF1.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         restauranteTF1.setBorder(null);
-        add(restauranteTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 240, 30));
+        restauranteTF1.setCaretColor(new java.awt.Color(36, 56, 63));
+        restauranteTF1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jSeparator1.setBackground(new java.awt.Color(113, 166, 111));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 240, 10));
+        jSeparator1.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF4.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF4.setBackground(new java.awt.Color(112, 135, 140));
         restauranteTF4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteTF4.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF4.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         restauranteTF4.setBorder(null);
-        add(restauranteTF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 240, 30));
 
-        jSeparator2.setBackground(new java.awt.Color(113, 166, 111));
-        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 240, 10));
+        jSeparator2.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF5.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF5.setBackground(new java.awt.Color(112, 135, 140));
         restauranteTF5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteTF5.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF5.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         restauranteTF5.setBorder(null);
-        add(restauranteTF5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 240, 30));
 
-        jSeparator3.setBackground(new java.awt.Color(113, 166, 111));
-        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 240, 10));
+        jSeparator3.setBackground(new java.awt.Color(36, 56, 63));
 
-        restauranteTF6.setBackground(new java.awt.Color(19, 38, 35));
+        restauranteTF6.setBackground(new java.awt.Color(112, 135, 140));
         restauranteTF6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteTF6.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteTF6.setForeground(new java.awt.Color(36, 56, 63));
         restauranteTF6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         restauranteTF6.setBorder(null);
-        add(restauranteTF6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 240, 30));
 
-        jSeparator4.setBackground(new java.awt.Color(113, 166, 111));
-        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 240, 10));
+        jSeparator4.setBackground(new java.awt.Color(36, 56, 63));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(restauranteTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(restauranteTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(restauranteTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(restauranteTF6, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(450, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteTF6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(320, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 

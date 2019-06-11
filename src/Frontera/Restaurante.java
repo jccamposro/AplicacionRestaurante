@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Restaurante extends javax.swing.JPanel {
 
     private NuevoRestaurante nuevo = new NuevoRestaurante();
+    private Dialogo dialogo = new Dialogo(null, true);
 
     public Restaurante() {
         initComponents();
@@ -21,8 +22,9 @@ public class Restaurante extends javax.swing.JPanel {
 
     public void validarInicioRestaurante() {
         if (nuevo.validarCampos()) {
-            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea volver al inicio?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
-            if (selCon == 0) {
+            dialogo.textoLabel("¿Desea volver atrás?");
+            int selCon = dialogo.visible();
+            if (selCon == 1) {
                 principalRestaurante.setVisible(false);
                 principalRestaurante.removeAll();
                 principalRestaurante.add(inicioRestaurante);
@@ -30,8 +32,9 @@ public class Restaurante extends javax.swing.JPanel {
                 back.setVisible(false);
             }
         } else {
-            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
-            if (selCon == 0) {
+            dialogo.textoLabel("¿Desea guardar los datos?");
+            int selCon = dialogo.visible();
+            if (selCon == 1) {
                 System.out.println("Datos guardados");
                 principalRestaurante.setVisible(false);
                 principalRestaurante.removeAll();
@@ -72,32 +75,36 @@ public class Restaurante extends javax.swing.JPanel {
         restauranteEditarIcon = new javax.swing.JLabel();
         restauranteEditarLabel = new javax.swing.JLabel();
 
-        tituloRestaurante.setBackground(new java.awt.Color(113, 166, 111));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tituloRestaurante.setBackground(new java.awt.Color(68, 85, 89));
         tituloRestaurante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         restaurante.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        restaurante.setForeground(new java.awt.Color(19, 38, 35));
+        restaurante.setForeground(new java.awt.Color(36, 56, 63));
         restaurante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         restaurante.setText("RESTAURANTE");
-        tituloRestaurante.add(restaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, -1, 1120, 80));
+        tituloRestaurante.add(restaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 9, 930, 40));
 
         back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/arrow.png"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/log-out.png"))); // NOI18N
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backMouseClicked(evt);
             }
         });
-        tituloRestaurante.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+        tituloRestaurante.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 40, 40));
+
+        add(tituloRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 60));
 
         principalRestaurante.setBackground(new java.awt.Color(19, 38, 35));
         principalRestaurante.setLayout(new java.awt.BorderLayout());
 
-        inicioRestaurante.setBackground(new java.awt.Color(19, 38, 35));
+        inicioRestaurante.setBackground(new java.awt.Color(112, 135, 140));
 
         restauranteNuevaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        restauranteNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/noteB.png"))); // NOI18N
+        restauranteNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/support-ticket.png"))); // NOI18N
         restauranteNuevaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         restauranteNuevaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,26 +113,24 @@ public class Restaurante extends javax.swing.JPanel {
         });
 
         restauranteNuevaLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteNuevaLabel.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteNuevaLabel.setForeground(new java.awt.Color(36, 56, 63));
         restauranteNuevaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         restauranteNuevaLabel.setText("CREAR");
         restauranteNuevaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         restauranteVerIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        restauranteVerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dataB.png"))); // NOI18N
-        restauranteVerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        restauranteVerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/phone-book.png"))); // NOI18N
 
         restauranteVerLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteVerLabel.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteVerLabel.setForeground(new java.awt.Color(36, 56, 63));
         restauranteVerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         restauranteVerLabel.setText("VER");
-        restauranteVerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         restauranteEditarIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        restauranteEditarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pencilB.png"))); // NOI18N
+        restauranteEditarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dialog.png"))); // NOI18N
 
         restauranteEditarLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        restauranteEditarLabel.setForeground(new java.awt.Color(113, 166, 111));
+        restauranteEditarLabel.setForeground(new java.awt.Color(36, 56, 63));
         restauranteEditarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         restauranteEditarLabel.setText("EDITAR");
 
@@ -133,58 +138,41 @@ public class Restaurante extends javax.swing.JPanel {
         inicioRestaurante.setLayout(inicioRestauranteLayout);
         inicioRestauranteLayout.setHorizontalGroup(
             inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-            .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(inicioRestauranteLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(inicioRestauranteLayout.createSequentialGroup()
-                            .addComponent(restauranteNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(170, 170, 170)
-                            .addComponent(restauranteVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(restauranteEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(inicioRestauranteLayout.createSequentialGroup()
-                            .addComponent(restauranteNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(170, 170, 170)
-                            .addComponent(restauranteVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(restauranteEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(inicioRestauranteLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inicioRestauranteLayout.createSequentialGroup()
+                        .addComponent(restauranteNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(restauranteVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(restauranteEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioRestauranteLayout.createSequentialGroup()
+                        .addComponent(restauranteNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(restauranteVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(restauranteEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(350, Short.MAX_VALUE))
         );
         inicioRestauranteLayout.setVerticalGroup(
             inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
-            .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(inicioRestauranteLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(restauranteNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(restauranteVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(restauranteEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(restauranteNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(restauranteVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(restauranteEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(inicioRestauranteLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(restauranteNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(inicioRestauranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(restauranteNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restauranteEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         principalRestaurante.add(inicioRestaurante, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principalRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tituloRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(tituloRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(principalRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(principalRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, 570));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
@@ -197,16 +185,8 @@ public class Restaurante extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel asignacionEditarIcon;
-    private javax.swing.JLabel asignacionEditarLabel;
-    private javax.swing.JLabel asignacionNuevaIcon;
-    private javax.swing.JLabel asignacionNuevaLabel;
-    private javax.swing.JLabel asignacionVerIcon;
-    private javax.swing.JLabel asignacionVerLabel;
     private javax.swing.JLabel back;
-    private javax.swing.JPanel inicioAsignacion;
     private javax.swing.JPanel inicioRestaurante;
-    private javax.swing.JPanel principalAsignacion;
     private javax.swing.JPanel principalRestaurante;
     private javax.swing.JLabel restaurante;
     private javax.swing.JLabel restauranteEditarIcon;

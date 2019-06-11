@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Asignacion extends javax.swing.JPanel {
 
     private NuevaAsignacion nueva = new NuevaAsignacion();
+    public Dialogo dialogo = new Dialogo(null, true);
 
     public Asignacion() {
         initComponents();
@@ -21,8 +22,9 @@ public class Asignacion extends javax.swing.JPanel {
 
     public void validarInicioAsignacion() {
         if (nueva.validarCampos()) {
-            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea volver al inicio?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
-            if (selCon == 0) {
+            dialogo.textoLabel("¿Desea volver atrás?");
+            int selCon = dialogo.visible();
+            if (selCon == 1) {
                 principalAsignacion.setVisible(false);
                 principalAsignacion.removeAll();
                 principalAsignacion.add(inicioAsignacion);
@@ -30,9 +32,18 @@ public class Asignacion extends javax.swing.JPanel {
                 back.setVisible(false);
             }
         } else {
-            int selCon = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?", "Confirmación", JOptionPane.OK_CANCEL_OPTION);
-            if (selCon == 0) {
+            dialogo.textoLabel("¿Desea guardar los datos?");
+            int selCon = dialogo.visible();
+            if (selCon == 1) {
                 System.out.println("Datos guardados");
+                principalAsignacion.setVisible(false);
+                principalAsignacion.removeAll();
+                principalAsignacion.add(inicioAsignacion);
+                principalAsignacion.setVisible(true);
+                back.setVisible(false);
+                nueva.vaciarCampos();
+            }
+            if (selCon == 0) {
                 principalAsignacion.setVisible(false);
                 principalAsignacion.removeAll();
                 principalAsignacion.add(inicioAsignacion);
@@ -72,32 +83,37 @@ public class Asignacion extends javax.swing.JPanel {
         asignacionEditarIcon = new javax.swing.JLabel();
         asignacionEditarLabel = new javax.swing.JLabel();
 
-        tituloAsignacion.setBackground(new java.awt.Color(113, 166, 111));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tituloAsignacion.setBackground(new java.awt.Color(68, 85, 89));
         tituloAsignacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         asignacion.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
-        asignacion.setForeground(new java.awt.Color(19, 38, 35));
+        asignacion.setForeground(new java.awt.Color(36, 56, 63));
         asignacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacion.setText("ASIGNACIÓN");
-        tituloAsignacion.add(asignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, -1, 1120, 80));
+        tituloAsignacion.add(asignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 9, 960, 40));
 
         back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/arrow.png"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/log-out.png"))); // NOI18N
+        back.setToolTipText("Atrás");
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backMouseClicked(evt);
             }
         });
-        tituloAsignacion.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
+        tituloAsignacion.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 40, 40));
+
+        add(tituloAsignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 60));
 
         principalAsignacion.setBackground(new java.awt.Color(19, 38, 35));
         principalAsignacion.setLayout(new java.awt.BorderLayout());
 
-        inicioAsignacion.setBackground(new java.awt.Color(19, 38, 35));
+        inicioAsignacion.setBackground(new java.awt.Color(112, 135, 140));
 
         asignacionNuevaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        asignacionNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/noteB.png"))); // NOI18N
+        asignacionNuevaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/support-ticket.png"))); // NOI18N
         asignacionNuevaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         asignacionNuevaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,26 +122,24 @@ public class Asignacion extends javax.swing.JPanel {
         });
 
         asignacionNuevaLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        asignacionNuevaLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionNuevaLabel.setForeground(new java.awt.Color(36, 56, 63));
         asignacionNuevaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacionNuevaLabel.setText("CREAR");
         asignacionNuevaLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         asignacionVerIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        asignacionVerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dataB.png"))); // NOI18N
-        asignacionVerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        asignacionVerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/phone-book.png"))); // NOI18N
 
         asignacionVerLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        asignacionVerLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionVerLabel.setForeground(new java.awt.Color(36, 56, 63));
         asignacionVerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacionVerLabel.setText("VER");
-        asignacionVerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         asignacionEditarIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        asignacionEditarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pencilB.png"))); // NOI18N
+        asignacionEditarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dialog.png"))); // NOI18N
 
         asignacionEditarLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        asignacionEditarLabel.setForeground(new java.awt.Color(113, 166, 111));
+        asignacionEditarLabel.setForeground(new java.awt.Color(36, 56, 63));
         asignacionEditarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         asignacionEditarLabel.setText("EDITAR");
 
@@ -133,58 +147,41 @@ public class Asignacion extends javax.swing.JPanel {
         inicioAsignacion.setLayout(inicioAsignacionLayout);
         inicioAsignacionLayout.setHorizontalGroup(
             inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1281, Short.MAX_VALUE)
-            .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(inicioAsignacionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(inicioAsignacionLayout.createSequentialGroup()
-                            .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(170, 170, 170)
-                            .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(inicioAsignacionLayout.createSequentialGroup()
-                            .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(170, 170, 170)
-                            .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                        .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                        .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         inicioAsignacionLayout.setVerticalGroup(
             inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
-            .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(inicioAsignacionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(inicioAsignacionLayout.createSequentialGroup()
+                .addGap(178, 178, 178)
+                .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(asignacionNuevaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(asignacionVerIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(asignacionEditarIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(inicioAsignacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(asignacionNuevaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(asignacionVerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(asignacionEditarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
 
         principalAsignacion.add(inicioAsignacion, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principalAsignacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tituloAsignacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(tituloAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(principalAsignacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(principalAsignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, 570));
     }// </editor-fold>//GEN-END:initComponents
 
     private void asignacionNuevaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignacionNuevaIconMouseClicked
