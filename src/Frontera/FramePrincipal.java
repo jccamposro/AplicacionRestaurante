@@ -1,8 +1,13 @@
 package Frontera;
 
 import javax.swing.JOptionPane;
+import Conexion.Conexion;
+import java.sql.Connection;
 
 public class FramePrincipal extends javax.swing.JFrame {
+
+    Conexion con = new Conexion();
+    Connection Conectado = con.conectar("root", "17111996");
 
     private Restaurante restaurante = new Restaurante();
     private Asignacion asignacion = new Asignacion();
